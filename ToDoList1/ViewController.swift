@@ -26,12 +26,12 @@ class ViewController: UITableViewController, sendDataDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("number of row")
+       
         return  itemsInTableView.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("cellForRowAt")
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         
         
@@ -78,7 +78,7 @@ struct ItemStruct{
 extension ViewController{
     
     func getContext () -> NSManagedObjectContext {
-        print("in getcon")
+       
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
         
@@ -100,7 +100,7 @@ extension ViewController{
     }
     
     func getItem () {
-        print("in get")
+       
         let context = getContext()
         let request = NSFetchRequest<ItemTable>.init(entityName: "ItemTable")
         
